@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SoundSculptMaui"
+             x:Class="SoundSculptMaui.ArtistPage">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid BackgroundColor="#007bff" Padding="0,20,0,10">
+                    <Label Text="Artists" FontSize="20" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+                </Grid>
+                <StackLayout BackgroundColor="#f5f5f5" Padding="20">
+                    <Label Text="Search Results for Provided Genre" FontSize="24" TextColor="Black" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10" />
+                    <ListView x:Name="ArtistListView" BackgroundColor="White">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="10">
+                                        <Label Text="{Binding Artist}" TextColor="Black" />
+                                        <Label Text="{Binding Venue}" TextColor="Gray" />
+                                        <Label Text="{Binding TicketCost}" TextColor="Green" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <Label x:Name="NoResultsLabel" Text="No artists found for the provided genre." TextColor="Red" HorizontalOptions="CenterAndExpand" IsVisible="False" Margin="0,10,0,0" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>
